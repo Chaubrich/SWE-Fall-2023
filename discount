@@ -1,0 +1,25 @@
+<script>
+function discountCode(coupon,subtotal)
+{ 
+    var free = ['free123','free456','free789'];
+    var percent10 = ['ten1','ten2','ten3'];
+    var percent20 = ['twenty','twenty1','twenty2'];
+    var dollars20 = ['dollarcode1', 'dollarcode2'];
+    var dollars25 = ['dollarcode3', 'dollarcode4'];
+    var amount = subtotal;
+      var coupon = coupon;
+    var percentDiscount = 1;
+    var dollarDiscount = 0;
+    if(free.includes(coupon)){percentDiscount=0}
+        else{if(percent10.includes(coupon)){percentDiscount=.9}
+            else{if(percent20.includes(coupon)){percentDiscount=.8}
+                }
+            };
+    if(dollars20.includes(coupon)){dollarDiscount=20}
+        else{if(dollars25.includes(coupon)){dollarDiscount=25}
+            };
+    var totalAmount = amount*percentDiscount-dollarDiscount;
+    if(totalAmount < 0){totalAmount = 0};
+    return totalAmount;
+};
+</script>
